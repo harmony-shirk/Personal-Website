@@ -351,3 +351,8 @@ html {
   display: block;
   text-align: center;
 }
+
+.about_buttons {
+  display: flex;
+  justify-content: center;
+}
