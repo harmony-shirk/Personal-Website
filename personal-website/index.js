@@ -5,6 +5,9 @@
   const navClose = id("nav-close");
   const navLink = qsa('.nav_link');
 
+  const skillsContent = document.getElementsByClassName('skills_content');
+  const skillsHeader = qsa('.skills_header');
+
   window.addEventListener("load", init);
 
   function init() {
@@ -19,12 +22,25 @@
       });
     }
     navLink.forEach(n => n.addEventListener('click', linkAction));
+
+    skillsHeader.forEach(el => el.addEventListener('click', toggleSkills));
   }
 
   /*================== REMOVE MENU MOBILE ====================*/
   function linkAction() {
     let navMenu = id('nav-menu');
     navMenu.classList.remove('show-menu');
+  }
+
+  /*================== ACCORDIAN SKILLS ====================*/
+  function toggleSkills() {
+    let itemClass = this.parentNode.className;
+    for (let i = 0; i < skillsContent.length; i++) {
+      skillsContent[i].className = "skills_content skills_close";
+    }
+    if (itemClass === "skills_content skills_close") {
+      this.parentNode.className = "skills_content skills_open";
+    }
   }
 
 
