@@ -8,6 +8,13 @@
   const skillsContent = document.getElementsByClassName('skills_content');
   const skillsHeader = qsa('.skills_header');
 
+  const tab = qsa('[data-target]');
+  const tabContents = qsa('[data-content]');
+
+  const modalViews = qsa('.services_modal'),
+        modalBtns = qsa('.services_button'),
+        modalCloses = qsa('.services_modal-close');
+
   window.addEventListener("load", init);
 
   function init() {
@@ -24,6 +31,23 @@
     navLink.forEach(n => n.addEventListener('click', linkAction));
 
     skillsHeader.forEach(el => el.addEventListener('click', toggleSkills));
+
+    tabContents.forEach(tab => {
+      tab.addEventListener('click', addQualification);
+    });
+
+    modalBtns.forEach((modalBtn, i) => {
+      modalBtn.addEventListener('click', function() {
+        modal(i);
+      });
+    });
+    modalCloses.forEach((modalClose) => {
+      modalClose.addEventListener('click', function() {
+        modalViews.forEach((modalView) => {
+          modalView.classList.remove('active-modal');
+        });
+      });
+    });
   }
 
   /*================== REMOVE MENU MOBILE ====================*/
@@ -41,6 +65,24 @@
     if (itemClass === "skills_content skills_close") {
       this.parentNode.className = "skills_content skills_open";
     }
+  }
+
+  /*================== QUALIFICATION TABS ====================*/
+  function addQualification() {
+    let target = qs(tab.dataset.target);
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('qualification_active');
+    });
+    target.classList.add('qualification_active');
+    tab.forEach(tab => {
+      tab.classList.remove('qualification_active');
+    });
+    tab.classList.add('qualification_active');
+  }
+
+  /*================== SERVICES MODAL ====================*/
+  function modal(modalClick) {
+    modalViews[modalClick].classList.add('active-modal');
   }
 
 

@@ -230,20 +230,19 @@
 
         <div class="qualification_container container">
           <div class="qualification_tabs">
-            <div class="qualification_button">
-              <div class="qualification_button button-flex">
-                <i class="uil uil-graduation-cap qualification_icon"></i>
-                Education
-              </div>
-              <!-- <div class="qualification_button button-flex">
+            <div class="qualification_button button-flex qualification_active" data-target="#education">
+              <i class="uil uil-graduation-cap qualification_icon"></i>
+              Education
+            </div>
+              <!-- <div class="qualification_button button-flex qualification_active" data-target="#work">
                 <i class="uil uil-briefcase-alt qualification_icon"></i>
                 Work
               </div> -->
-            </div>
+          </div>
 
             <div class="qualification_sections">
               <!--================== QUALIFICATIONS CONTENT 1 ==============================-->
-              <div class="qualification_content">
+              <div class="qualification_content qualification_active" data-content id="education">
                 <div class="qualification_data">
                   <div>
                     <h3 class="qualification_title">Computer Science</h3>
@@ -258,6 +257,76 @@
                     <span class="qualification_line"></span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--================== SERVICES ==============================-->
+      <section class="services section" id="services">
+        <h2 class="section_title">Personal Projects</h2>
+        <span class="section_subtitle">What I do in my free time</span>
+
+        <div class="services_container container grid">
+          <!--================== SERVICES 1 ==============================-->
+          <div class="services_content">
+            <div>
+              <i class="uil uil-web-grid services_icon"></i>
+              <h3 class="services_title">Campus Maps <br> Java</h3>
+            </div>
+
+            <span class="button button-flex button-small button-link services_button">
+              View More
+              <i class="uil uil-arrow-right button_icon"></i>
+            </span>
+
+            <div class="services_modal">
+              <div class="services_modal-content">
+                <h4 class="services_modal-title">IDk</h4>
+                <i class="uil uil-times services_modal-close"></i>
+
+                <ul class="services_modal-services grid">
+                  <li class="services_modal-service">
+                    <i class="uil uil-check-circle services_modal-icon"></i>
+                    <p>Made a map of UW</p>
+                  </li>
+                  <li class="services_modal-service">
+                    <i class="uil uil-check-circle services_modal-icon"></i>
+                    <p>Implemented map abstract data type</p>
+                  </li>
+                  <li class="services_modal-service">
+                    <i class="uil uil-check-circle services_modal-icon"></i>
+                    <p>Uses Dijkstra's Algorithm</p>
+                  </li>
+                  <li class="services_modal-service">
+                    <i class="uil uil-check-circle services_modal-icon"></i>
+                    <p>Builds a navigator for directions to travel between two UW campus points</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--================== PORTFOLIO ==============================-->
+      <section class="portfolio section" id="portfolio">
+        <h2 class="section_title">Portfolio</h2>
+        <span class="section_subtitle">Most Recent Work</span>
+
+        <div class="portfolio_container container">
+          <div>
+            <div class="portfolio_content grid">
+              <img src="img/about.JPG" alt="something" class="portfolio_img">
+
+              <div class="portfolio_data">
+                <h3 class="portfolio_title">Modern Website</h3>
+                <p class="portfolio_description">Website adaptable to all devices.</p>
+                <a href="#" class="button button-flex button-small portfolio_button">
+                  Demo
+                  <i class="uil uil-arrow-right button_icon"></i>
+                </a>
               </div>
             </div>
           </div>
