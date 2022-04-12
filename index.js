@@ -1,10 +1,5 @@
 "use strict";
 (function() {
-  const navMenu = id("nav-menu");
-  const navToggle = id("nav-toggle");
-  const navClose = id("nav-close");
-  const navLink = qsa('.nav_link');
-
   const skillsContent = document.getElementsByClassName('skills_content');
   const skillsHeader = qsa('.skills_header');
 
@@ -21,6 +16,11 @@
   window.addEventListener("load", init);
 
   function init() {
+    let navMenu = id("nav-menu");
+    let navToggle = id("nav-toggle");
+    console.log(navToggle)
+    let navClose = id("nav-close");
+    let navLink = qsa('.nav_link');
     if (navToggle) {
       navToggle.addEventListener("click", () => {
         navMenu.classList.add("show-menu");
