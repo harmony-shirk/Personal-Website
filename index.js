@@ -17,17 +17,6 @@
 
   const sections = document.querySelectorAll('section[id]');
 
-  const themeButton = document.getElementById('theme-button')
-  const darkTheme = 'dark-theme'
-  const iconTheme = 'uil-sun'
-
-  // Previously selected topic (if user selected)
-  const selectedTheme = localStorage.getItem('selected-theme')
-  const selectedIcon = localStorage.getItem('selected-icon')
-
-  // We obtain the current theme that the interface has by validating the dark-theme class
-  const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-  const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
 
   window.addEventListener("load", init);
 
@@ -84,6 +73,17 @@
     window.addEventListener('scroll', scrollUp);
 
     /*==================== DARK LIGHT THEME ====================*/
+    let themeButton = id("theme-button");
+    let darkTheme = 'dark-theme';
+    let iconTheme = 'uil-sun';
+
+    // Previously selected topic (if user selected)
+    let selectedTheme = localStorage.getItem('selected-theme')
+    let selectedIcon = localStorage.getItem('selected-icon')
+
+    // We obtain the current theme that the interface has by validating the dark-theme class
+    let getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+    let getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
     // We validate if the user previously chose a topic
     if (selectedTheme) {
       // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
