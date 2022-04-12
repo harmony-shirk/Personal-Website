@@ -1,8 +1,5 @@
 "use strict";
 (function() {
-  const skillsContent = document.getElementsByClassName('skills_content');
-  const skillsHeader = qsa('.skills_header');
-
   const tab = qsa('[data-target]');
   const tabContents = qsa('[data-content]');
 
@@ -18,7 +15,6 @@
   function init() {
     let navMenu = id("nav-menu");
     let navToggle = id("nav-toggle");
-    console.log(navToggle)
     let navClose = id("nav-close");
     let navLink = qsa('.nav_link');
     if (navToggle) {
@@ -33,6 +29,7 @@
     }
     navLink.forEach(n => n.addEventListener('click', linkAction));
 
+    let skillsHeader = qsa('.skills_header');
     skillsHeader.forEach((el) => {
       el.addEventListener('click', toggleSkills)
     });
@@ -110,6 +107,7 @@
 
   /*================== ACCORDIAN SKILLS ====================*/
   function toggleSkills() {
+    let skillsContent = document.getElementsByClassName('skills_content');
     let itemClass = this.parentNode.className;
     for (let i = 0; i < skillsContent.length; i++) {
       skillsContent[i].className = "skills_content skills_close";
